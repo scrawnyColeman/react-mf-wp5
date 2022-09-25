@@ -2,8 +2,8 @@ import React, { FunctionComponent, useRef } from "react";
 import styled from "styled-components";
 import Button from "./Button";
 
-import vanillaMFE from "vanilla-mfe/Component";
-import { useLoadMFE } from "./hooks/useLoadMFE";
+// import vanillaMFE from "vanilla-mfe/Component";
+// import { useLoadMFE } from "./hooks/useLoadMFE";
 
 const App: FunctionComponent = () => {
   // const vanillaRef = useRef<HTMLDivElement>(null);
