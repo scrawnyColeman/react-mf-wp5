@@ -1,13 +1,24 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, useRef } from "react";
 import styled from "styled-components";
 import Button from "./Button";
 
-const App: FunctionComponent = () => (
-  <StyledContainer>
-    <StyledH4>A microfrontend built with React</StyledH4>
-    <Button />
-  </StyledContainer>
-);
+import vanillaMFE from "vanilla-mfe/Component";
+import { useLoadMFE } from "./hooks/useLoadMFE";
+
+const App: FunctionComponent = () => {
+  const vanillaRef = useRef<HTMLDivElement>(null);
+  useLoadMFE(vanillaMFE, vanillaRef);
+
+  return (
+    <>
+      <StyledContainer>
+        <StyledH4>A microfrontend built with React</StyledH4>
+        <Button />
+      </StyledContainer>
+      <div ref={vanillaRef} />
+    </>
+  );
+};
 
 const StyledContainer = styled.div`
   background-color: skyblue;

@@ -6,7 +6,7 @@ module.exports = (_, argv) => ({
   output: {
     publicPath:
       argv.mode === "development"
-        ? "http:localhost:8081"
+        ? "http://localhost:8081/"
         : "https://react-mf-wp5-rk86.vercel.app/",
   },
 
@@ -52,7 +52,9 @@ module.exports = (_, argv) => ({
     new ModuleFederationPlugin({
       name: "react_mfe",
       filename: "remoteEntry.js",
-      remotes: {},
+      remotes: {
+        "vanilla-mfe": "vanilla_mfe@http://localhost:8082/remoteEntry.js",
+      },
       exposes: {
         "./App": "./src/exposed/App.tsx",
         "./Button": "./src/exposed/Button.tsx",
