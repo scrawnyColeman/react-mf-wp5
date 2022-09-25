@@ -57,8 +57,10 @@ module.exports = (_, argv) => ({
           "vanilla_mfe@https://vanillajs-mf-wp5-qqyf.vercel.app/remoteEntry.js",
       },
       exposes: {
-        "./App": "./src/exposed/App.tsx",
-        "./Button": "./src/exposed/Button.tsx",
+        "./RenderApp": "./src/exposed/App.tsx",
+        "./RenderButton": "./src/exposed/Button.tsx",
+        "./App": "./src/App.tsx",
+        "./Button": "./src/Button.tsx",
       },
       shared: {
         ...deps,
