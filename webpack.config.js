@@ -53,7 +53,8 @@ module.exports = (_, argv) => ({
       name: "react_mfe",
       filename: "remoteEntry.js",
       remotes: {
-        "vanilla-mfe": "vanilla_mfe@http://localhost:8082/remoteEntry.js",
+        "vanilla-mfe":
+          "vanilla_mfe@https://vanillajs-mf-wp5-qqyf.vercel.app/remoteEntry.js",
       },
       exposes: {
         "./App": "./src/exposed/App.tsx",
